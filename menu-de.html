@@ -154,17 +154,18 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#info">Restaurant Info</a>
-        <a href="#vorspeisen">Vorspeisen</a>
-        <a href="#pasta">Pasta | Nudelgerichte</a>
-        <a href="#pizza">Pizza</a>
-        <a href="#fleisch">Fleischgerichte</a>
-        <a href="#kinder">Kinderportionen</a>
-        <a href="#getraenke">Getränke</a>
+        <!-- When a user clicks on a link, the sidenav will close -->
+        <a href="#info" onclick="closeNav()">Restaurant Info</a>
+        <a href="#vorspeisen" onclick="closeNav()">Vorspeisen</a>
+        <a href="#pasta" onclick="closeNav()">Pasta | Nudelgerichte</a>
+        <a href="#pizza" onclick="closeNav()">Pizza</a>
+        <a href="#fleisch" onclick="closeNav()">Fleischgerichte</a>
+        <a href="#kinder" onclick="closeNav()">Kinderportionen</a>
+        <a href="#getraenke" onclick="closeNav()">Getränke</a>
     </div>
 
     <script>
-        // Ensure the sidenav is closed on page load
+        // Ensure the sidenav is closed on page loads
         window.onload = function() {
             closeNav(); // Close the sidenav as soon as the page loads
         };
