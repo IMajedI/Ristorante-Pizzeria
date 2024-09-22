@@ -88,12 +88,19 @@
             border-radius: 5px;
         }
 
+        /* Style for hiding the "Menü" text on mobile screens */
+        #openNav span {
+            font-size: 16px;
+        }
+
         @media screen and (max-width: 768px) {
-    #openNav {
-        padding: 10px;
-    }
+            #openNav span {
+                display: none; /* Hides only the "Menü" text on small screens */
+            }
+        }
 
-
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
             .sidenav {
                 width: 100%;
                 height: 100%;
@@ -111,10 +118,6 @@
     </style>
 </head>
 <body>
-
-    
-
-    <span id="openNav" onclick="openNav()">&#9776; Menü</span>
 
     <div class="content">
         <div id="info" class="menu-section">
@@ -148,6 +151,7 @@
             <img src="Images/page7.png" alt="getraenke">
         </div>
     </div>
+
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#info">Restaurant Info</a>
@@ -160,16 +164,22 @@
     </div>
 
     <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = window.innerWidth <= 768 ? "100%" : "250px";
-            document.body.style.backgroundColor = "";
-        }
+        // Ensure the sidenav is closed on page load
+        window.onload = function() {
+            closeNav(); // Close the sidenav as soon as the page loads
+        };
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
-            document.body.style.backgroundColor = "";
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = window.innerWidth <= 768 ? "100%" : "250px";
         }
     </script>
+
+    <!-- Wrap the hamburger icon and the "Menü" word in a span -->
+    <span id="openNav" onclick="openNav()">&#9776; <span>Menü</span></span>
 
 </body>
 </html>
